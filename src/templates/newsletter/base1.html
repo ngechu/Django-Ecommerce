@@ -1,0 +1,53 @@
+ {% load staticfiles %}
+ <!--<!DOCTYPE html>-->
+ <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="">
+
+    <title>{% block head_title %}TreeHub {% endblock %}</title>
+
+   {% include 'newsletter/head_css.html' %}
+
+   <style type="text/css">
+     {% block style %}
+     {%endblock %}
+   </style>
+
+   
+  </head>
+  <body style="min-height: 600px">
+
+
+
+
+  {% include 'newsletter/navbar.html' %}
+
+  
+        {% block jumbotron %}
+          
+           {% endblock %}
+          
+    <div class="container" style="height: 400px;">
+         
+          
+
+           {% block content %}
+             {% endblock %}
+
+          
+        
+       </div>
+
+     
+    {% include 'newsletter/footer.html'%}
+
+     {% include 'newsletter/javascript.html' %}
+  </body>
+
+ </html>

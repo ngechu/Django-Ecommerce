@@ -1,0 +1,96 @@
+  {% extends "newsletter/base1.html" %}
+  {% load staticfiles %}
+
+  {% load   crispy_forms_tags %}
+
+  {% block head_title %} welcome | {{block.super }} {% endblock %} 
+
+ <style>
+{% block style %}  
+.jumbotron{
+	background-color:#0c8c16;
+	color:white;
+  }
+.navbar-static-top1{
+	color:white;
+
+
+}
+{% endblock %}
+ </style>
+
+
+
+{% block jumbotron %}
+
+	 <div class="jumbotron">
+	 <div class="container">
+		<div class="row">
+			<div class="col-sm-8">
+
+
+		        <p>Trees are an important part of us and of generally to the environment because they play a very big part in ensuring the balance of nature thats why we depend on all of you to join us in this movement of preserving and educating the masses about the benefits of trees inorder to look up to a better green future  </p>
+		        
+		        <p>
+		          <a class="btn btn-lg btn-primary" href="{% url 'registration_register' %}" role="button">join us &raquo;</a>
+		        </p>
+
+		      </div>
+			<div class="col-sm-4 col-offset-3 ">
+                <img src="{% static 'images/maathai.jpg' %}" height="250px" width="300px" class="img-rounded">
+            </div>
+
+		      </div>
+		      </div>
+
+		     
+		      
+		  </div>
+
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="row" style="text-align: center">
+	<div class="col-xs-3">
+		<p class="lead">Built by NgechuMunga  mzito</p>
+			
+			<i class="fas fa-comment-alt fa-8x"></i>
+	</div>
+	<div class="col-xs-3">
+		<p class="lead">Look inside and find what you actually seek</p>
+		<i class="fas fa-binoculars fa-8x"></i>	
+	</div>
+	<div class="col-xs-3">
+		<p class="lead">see into the future</p>
+		<i class="fas fa-eye fa-8x"></i>
+	</div>
+
+	<div class="col-xs-3  pull-right">
+	
+		<p class="lead">{{title}}</p>
+
+
+
+	 <form method="post" action="">
+         {% csrf_token %}
+		{{form|crispy}}
+
+		<input class="btn btn-success" type="submit" value="Signup">
+
+		  </form>  
+
+	  </div>
+	</div>
+
+<div class="row">
+	<div class="col-md-6">
+<div class="fb-comments" data-href="" data-numposts="5"></div>
+
+	</div>
+</div>
+
+
+{% endblock %} 		 
